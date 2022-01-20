@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>월드컵사이트</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  </head>
+  <body style="background-color: black; color: white; font-size: 20px; font-weight: bold;">
+    <div class="main" style="margin: 20px 0 0 10px;"></div>
+    <div class="list" style="display: none;"></div>
+    <script>
+      $(`.list`).load('./idealtype.json', (txt, status) => {
+        if (status == "error") {
+          $(`.main`).html(`<h1>파일을 불러올수 없음</h1>`);
+        } else {
+          let list = [{
+            "test": {
+              "description": "test",
+              "complite": 100,
+              "start": true
+            }
+          }];
+          list = eval(txt)[0];
+          var text = "";
+          for (let [ key, value ] of Object.entries(list)) {
+            text += `"${key}": {<br/>&nbsp;&nbsp;description: "${value.description}",<br/>&nbsp;&nbsp;complite: ${value.complite},<br/>&nbsp;&nbsp;start: ${value.start}<br/>},<br/>`;
+          }
+          if (text.length > 0) text = text.slice(0,-1);
+          else text = "없음";
+          $(`.main`).html(text);
+        }
+      });
+    </script>
+  </body>
+</html>
