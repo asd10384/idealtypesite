@@ -23,6 +23,17 @@
             }
           }];
           list = eval(txt)[0];
+          const url = new URL(window.location.href);
+          if (url.searchParams.get("list")) {
+            var text = "";
+            $(".list").load('./list/'+url.searchParams.get("list")+'.json', (txt, status) => {
+              if (status == "error") {
+                $(`.main`).html(`<h1>파일을 불러올수 없음</h1>`);
+              } else {
+          $(`.main`).html(txt);
+              }
+            })
+          } else {
           var text = "";
           for (let [ key, value ] of Object.entries(list)) {
             text += `"${key}": {<br/>&nbsp;&nbsp;description: "${value.description}",<br/>&nbsp;&nbsp;complite: ${value.complite},<br/>&nbsp;&nbsp;start: ${value.start}<br/>},<br/>`;
@@ -30,6 +41,7 @@
           if (text.length > 0) text = text.slice(0,-1);
           else text = "없음";
           $(`.main`).html(text);
+          }
         }
       });
     </script>
