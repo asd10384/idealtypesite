@@ -26,11 +26,15 @@
           const url = new URL(window.location.href);
           if (url.searchParams.get("list")) {
             var text = "";
+            $("title").html(url.searchParams.get("list"));
             $(".list").load('./list/'+url.searchParams.get("list")+'.json', (txt, status) => {
               if (status == "error") {
                 $(`.main`).html(`<h1>파일을 불러올수 없음</h1>`);
               } else {
-                $(`.main`).html(txt);
+                eval(txt).forEach((s, i) => {
+                  text += `${i+1}. ${s}<br/>\n`;
+                });
+                $(`.main`).html(text);
               }
             })
           } else {
