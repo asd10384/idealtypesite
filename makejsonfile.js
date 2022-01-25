@@ -2,7 +2,7 @@ const { readdir, writeFile } = require("fs");
 
 
 
-const 월드컵이름 = "라면월드컵";
+const 월드컵이름 = "치킨월드컵";
 
 
 

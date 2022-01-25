@@ -5,6 +5,11 @@
       "complite": 100,
       "start": true
     },
+      "치킨월드컵": {
+        "description": "치킨 이상형 월드컵",
+        "complite": 100,
+        "start": true
+      },
     "테스트2": {
       "description": "테스트 월드컵",
       "complite": 80,
