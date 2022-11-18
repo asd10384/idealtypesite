@@ -12,17 +12,17 @@
       "sound": false,
       "start": true
     },
+    "노래월드컵": {
+      "description": "노래 월드컵",
+      "complite": 20,
+      "sound": true,
+      "start": true
+    },
     "테스트2": {
       "description": "테스트 월드컵",
       "complite": 80,
       "sound": false,
       "start": false
-    },
-    "노래월드컵": {
-      "description": "노래 월드컵",
-      "complite": 100,
-      "sound": true,
-      "start": true
     }
   }
 ]
