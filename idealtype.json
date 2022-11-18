@@ -3,16 +3,19 @@
     "라면월드컵": {
       "description": "라면 이상형 월드컵",
       "complite": 100,
+      "sound": false,
       "start": true
     },
       "치킨월드컵": {
         "description": "치킨 이상형 월드컵",
         "complite": 100,
+        "sound": false,
         "start": true
       },
     "테스트2": {
       "description": "테스트 월드컵",
       "complite": 80,
+      "sound": false,
       "start": false
     }
   }
